@@ -178,6 +178,7 @@ import java.io.*;
 
 public strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable
     {
+        private static RandomNumberGenerator singleton = null;
     // Serialization
     private static final long serialVersionUID = -4035832775130174188L;  // locked as of Version 15
 
@@ -299,7 +300,36 @@ public strictfp class MersenneTwister extends java.util.Random implements Serial
         super(System.currentTimeMillis());    /* pick something at random just in case */
         setSeed(array);
         }
-
+    
+   /**
+     *  Gets the Instance attribute of the MersenneTwisterFast class
+     *
+     * @return    TBD
+     */
+    public static RandomNumberGenerator getInstance()
+    {
+        if (singleton == null)
+        {
+            singleton = (RandomNumberGenerator) new MersenneTwisterFast();
+        }
+        return singleton;
+    }
+    
+    
+    /**
+     *  A unique instance of the random number generator seeded by the user
+     *  supplied seed. Be advised that many RNG implementations only use an int's
+     *  worth of bits from the supplied long seed.
+     *
+     * @param  seed
+     * @return       A RandomNumberGenerator.
+     */
+    
+    public static RandomNumberGenerator getGenerator(long seed)
+    {
+        return (RandomNumberGenerator) new MersenneTwisterFast(seed);
+    }
+    
     /**
      * Initalize the pseudo random number generator.  Don't
      * pass in a long that's bigger than an int (Mersenne Twister
