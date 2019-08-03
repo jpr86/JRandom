@@ -190,7 +190,7 @@ import java.util.*;
 // on the code, I strongly suggest looking at MersenneTwister.java first.
 // -- Sean
 
-public strictfp class MersenneTwisterFast implements Serializable, Cloneable
+public strictfp class MersenneTwisterFast implements Serializable, Cloneable, RandomNumberGenerator
     {
         private static RandomNumberGenerator singleton = null;
     // Serialization

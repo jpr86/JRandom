@@ -176,7 +176,7 @@ import java.io.*;
  @version 22
 */
 
-public strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable
+public strictfp class MersenneTwister extends java.util.Random implements Serializable, Cloneable, RandomNumberGenerator
     {
         private static RandomNumberGenerator singleton = null;
     // Serialization
