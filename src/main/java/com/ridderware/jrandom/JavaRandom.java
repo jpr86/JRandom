@@ -1,6 +1,22 @@
 package com.ridderware.jrandom;
 
 public class JavaRandom extends java.util.Random implements RandomNumberGenerator {
+    private static RandomNumberGenerator singleton = null;
+
+    /**
+     *  Gets the Instance attribute of the MersenneTwisterFast class
+     *
+     * @return    TBD
+     */
+    public static RandomNumberGenerator getInstance()
+    {
+        if (singleton == null)
+        {
+            singleton = (RandomNumberGenerator) new MersenneTwisterFast();
+        }
+        return singleton;
+    }
+
     @Override
     public short nextShort() {
         return (short) next(16);
