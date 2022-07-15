@@ -67,14 +67,6 @@ public interface RandomNumberGenerator {
 
 
   /**
-   *  The next element in the sequence as a byte.
-   *
-   * @return    A byte.
-   */
-  public byte nextByte();
-
-
-  /**
    *  Fill the specified array with the next array.length bytes from the random
    *  sequence.
    *
