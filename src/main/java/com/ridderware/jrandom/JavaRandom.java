@@ -2,6 +2,20 @@ package com.ridderware.jrandom;
 
 public class JavaRandom extends java.util.Random implements RandomNumberGenerator {
     private static RandomNumberGenerator singleton = null;
+    public JavaRandom()
+    {
+        this(System.currentTimeMillis());
+    }
+
+    /**
+     * Constructor using a given seed.  Though you pass this seed in
+     * as a long, it's best to make sure it's actually an integer.
+     */
+    public JavaRandom(long seed)
+    {
+        super(seed);    /* just in case */
+        setSeed(seed);
+    }
 
     /**
      *  Gets the Instance attribute of the MersenneTwisterFast class
