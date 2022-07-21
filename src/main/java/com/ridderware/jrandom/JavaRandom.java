@@ -12,7 +12,7 @@ public class JavaRandom extends java.util.Random implements RandomNumberGenerato
     {
         if (singleton == null)
         {
-            singleton = (RandomNumberGenerator) new MersenneTwisterFast();
+            singleton = new JavaRandom();
         }
         return singleton;
     }
