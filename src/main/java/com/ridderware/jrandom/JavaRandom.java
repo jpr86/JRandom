@@ -19,11 +19,13 @@ public class JavaRandom extends java.util.Random implements RandomNumberGenerato
         setSeed(seed);
     }
 
+/*   @Override
     public void setSeed(long seed)
     {
         super.setSeed(seed);
         this.seed = seed;
     }
+*/
 
     /**
      *  Gets the Instance attribute of the MersenneTwisterFast class
