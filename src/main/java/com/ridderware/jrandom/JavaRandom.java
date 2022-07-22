@@ -2,6 +2,8 @@ package com.ridderware.jrandom;
 
 public class JavaRandom extends java.util.Random implements RandomNumberGenerator {
     private static RandomNumberGenerator singleton = null;
+    private long seed;
+
     public JavaRandom()
     {
         this(System.currentTimeMillis());
@@ -15,6 +17,12 @@ public class JavaRandom extends java.util.Random implements RandomNumberGenerato
     {
         super(seed);    /* just in case */
         setSeed(seed);
+    }
+
+    public void setSeed(long seed)
+    {
+        super.setSeed(seed);
+        this.seed = seed;
     }
 
     /**

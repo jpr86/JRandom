@@ -12,6 +12,10 @@ package com.ridderware.jrandom;
 
 public interface RandomNumberGenerator {
 
+
+  public void setSeed(long seed);
+
+
   /**
    *  The next element in the sequence as an int.
    *
